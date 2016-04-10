@@ -1,0 +1,51 @@
+CHANGE LOG
+
+** Version 0.31: 04/29/08
+Ten-Tec Omni VI / Omni VI Plus and IC-765 support
+Add Capabilities mechanism to allow backends to select supported
+methods within a Rig family (e.g., Icom)
+Improve "NAK" error checking after I/O operations.
+
+** Version 0.30 (various files): 8/28/07
+
+Revised Icom class with R8500 and R75 subclasses, with assistance from Jim
+Watson, M0DNS.  A large CI-V table is incorporated based on the listing from
+Ekkehard Plicht, DF4OR. This should make it easier to extend coverage to 
+other Icom models.
+
+Minor changes in other files.
+
+** Version 0.22: 5/7/07
+
+Added cgi-bin example of access to rigserve via webserver & cgi script.
+Other minor changes.
+
+** Version 0.21: 2/15/07
+
+Minor changes.  Exported to SVN  (cf http://sourceforge.net/projects/rigserve)
+
+** Version 0.2:  2/1/2007
+
+Changed Backend.py to provide skeletal methods only, which always return
+"None".  If a method returns "None", that means that the current rig
+definition subclass has not overlayed this method.  I.e., the method is
+unimplemented for the current rig.  (Used in "test" function.) Simplifies the
+"status" function.
+
+Rewrote Backends and Rigserve.py to specify "put", "get", and "test" in the
+body of a single method for each function, like af_gain.  No major change to
+user interface.
+
+Change 'atten' command to work from a list of pre-specified settings for each
+rig, rather than specifying an actual number of dB in the hope that the
+backend can actually achieve it.
+
+Provided local "_v" variables to hold settings for most commands.  These are
+rarely used for now, but they provide a "cheap" way to get a setting without
+going out to the rig each time.
+
+Cleaned up the code.
+
+Tested simultaneous operation of IC-R8500 and Orion.
+
+** Version 0.1: 11/15/2006 Preliminary release.

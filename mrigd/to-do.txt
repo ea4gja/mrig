@@ -1,0 +1,48 @@
+Rigserve things to do (or to consider)
+
+8/29/07
+
+Withdraw CGI example -- too complicated, impractical, ...?
+Direct web server as substitute for rigserve.py serial UI?
+Reconsider capability detection (client asking server what is
+supported).  Is there a better way?
+How to support bandpass/filtering better?  TPBT model vs Orion DSP etc.
+Alternatives for client/server protocol?
+Work on bullet-proofing rigserve, catching errors, etc.
+
+2/27/07
+
+Client development - better examples
+  -Interpreter for "get info" response. - Possible redesign to guarantee
+  a standard least common denominator interface with out polling for 
+  options.
+  -A simple GUI and/or web client
+
+Generalizations of the model...
+
+  -"Status" could allow for multiple instances of rig backends, like
+  two Orions on separate serial ports? Could also be done by running
+  completely separate rigserve instances.
+  
+  -Provide for simultaneous connections to one rig via multiple IP ports.
+  This would allow access from multiple apps - logging, digimode, etc.
+  I.e., rigserve would demultiplex commands to the rig - hopefully not
+  stepping on each other.  Alternatively, could put the burden on the
+  client.  Requires threading the server?
+
+  -Ensure support for simultaneous connections on multiple ports -
+  reentrancy issues?
+
+  -Support daisy-chain rigs on one port (Icom CIV).
+
+Logging options, control operator notifications
+
+Improvements in error handling?  Esp. for the Orion.
+
+Packaging for convenient Python-type distribution
+
+More backends (always!) Is it feasible to do some backends based on
+user manuals only - at least to alpha level?
+
+Connection with rigCAT XML definition project?
+   (http://www.w1hkj.com/xmlarchives.html)

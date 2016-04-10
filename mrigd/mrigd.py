@@ -133,6 +133,7 @@ if __name__ == "__main__":
 
         for cmd in cmds:
             response = send_to_rigserve(cmd)
+            time.sleep(1)
             if response.startswith(NAK_START):
                 abort("cmd " + cmd + " failed: " + response)
         print "mrigd: initialized!"

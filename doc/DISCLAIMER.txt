@@ -1,0 +1,4 @@
+This software is provided as-is, use at your own risk!
+
+It is still unstable, so be CAREFUL. Please make a backup of the EEPROM
+contents of the rig before trying this software!

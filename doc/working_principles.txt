@@ -1,0 +1,36 @@
+Why another remote radio system?
+--------------------------------
+
+mrig and mrigd are the client and the server of yet another remote radio
+system; they have been written as a proof of concept, trying to study
+a new (as far as I know) way to control a radio transceiver over the Internet.
+
+One problem to be solved is the unfriendliness of the CAT protocol of
+some ham radio transceivers. Some rigs (such as the one I have used to write
+this proof of concept) need, as far as I know, several commands to modify
+the value of just one of its features. This could be a problem if the CAT
+commands and their responses arrive to their destination with some delay,
+for instance when using the Internet as a transport to the CAT messages.
+
+Usual remote control programs just send each CAT command through the Internet,
+and wait for a response, so the CAT traffic is going forward and back several
+times, getting the delay multiplied. In my view, it is better to place a
+server near the rig, and let the CAT client send just one high level command
+to that server. Then, the server will translate the high level command to the
+required low level commands, which will get their responses with negligible
+delay, since the server is near the rig (ideally in the same LAN).
+
+Another problem is the inefficiency of the remote poll of the radio features
+through the Internet. The ham radio operator needs to be informed about
+several properties of the rig in real time, if possible: s-meter, ALC, SWR...
+Instead of sending a high level command for each one of these features,
+wait the Internet delay, obtaining the feature value at the server, wait
+another Internet delay and receiving the value at the client, it is better
+to have the server poll the rig transceiver and send the results in a UDP
+datagram, with only one delay.
+
+To further optimise the user experience, the system should poll the most
+critical features (such as the SWR or the ALC) more often, and the least
+critical ones (such as the DSP status) less often.
+
+mrig and mrigd are the implementation of such ideas as a proof of concept.

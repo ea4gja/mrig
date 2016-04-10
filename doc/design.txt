@@ -1,0 +1,42 @@
+Design goals
+------------
+
+1) The client and the server should run, at least, under OpenBSD and GNU/Linux
+2) The system should allow to remote control the most used features of a
+   Yaesu FT-897D amateur radio transceiver
+3) The system should be efficient, offering a fine usage experience to
+   the user even when using the Internet to transport the control messages
+4) The system should be distributed under a free licence
+
+
+mrigd and rigserve
+------------------
+
+mrigd is based on rigserve. rigserve is a is a network server based on
+Python that supports flexible control of amateur radio equipment, written
+by Martin Ewing, AA6E.
+
+mrigd adds experimental support for the Yaesu FT-897D to the rigserve
+system.
+
+Furthermore, mrigd adds the "service" concept to rigserve. A service is
+a separate process that can be started and stopped to perform a background
+task.
+
+Currently, mrigd uses services to implement proxies that translate the
+rigserve protocol to some other ones. The translated protocols are:
+
+    - hamlib/rigctl: used by some very popular GNU/Linux and UNIX ham
+      radio programs as a high level CAT protocol. The implementation
+      is useful, but not complete
+
+    - raw CAT: used by certain ham radio programs to talk the native low
+      level CAT protocol directly to the rig
+
+    - simple: this is the protocol that is actually spoken between mrigd
+      and mrig
+
+The simple service is useful as a higher level protocol. Since some of the
+Yaesu FT-897D features are read at once, there is only one rigserve command
+to get those features. The simple service sends that command once, decodes
+the result and translates it as several different features.

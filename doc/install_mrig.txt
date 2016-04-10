@@ -1,0 +1,19 @@
+The steps are:
+
+1) Be sure you have the python interpreter installed; the python
+   used during the development of the system has been python version 2.7.6
+
+2) Install the required dependency packages (currently just Tkinter should be
+   needed)
+
+3) Copy mrig/ to its installation directory (for instance, under /home/my_user)
+
+4) Edit the config file (in this example, /home/my_user/mrig/mrig_config.py).
+   Please do not remove the comments, they will help you the next time you
+   need to edit the same file
+
+5) Be sure the rig is turned on
+
+6) Be sure mrigd is installed and running
+
+7) Run mrig.py to connect to mrig

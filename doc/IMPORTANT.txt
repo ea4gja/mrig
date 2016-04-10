@@ -1,0 +1,15 @@
+IMPORTANT NOTICE
+----------------
+
+Do _NOT_ allow the entire planet to use your rig! You do not want to
+violate the terms of your amateur radio licence... do you?
+
+Please set up a VPN between both the radio site and the control site, and
+do not allow rigserve to listen on a publicly reachable IP address and port.
+
+Do _not_ allow any of the rigserve services to be reachable from the Internet
+either...
+
+If you do, YOUR RADIO WILL BE USED BY EVERYONE BUT YOU.
+
+YOU HAVE BEEN WARNED!

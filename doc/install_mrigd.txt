@@ -1,0 +1,24 @@
+The steps are:
+
+1) Be sure you have the python interpreter installed; the python
+   used during the development of the system has been python version 2.7.6
+
+2) Install the required dependency packages (currently just Pyserial should be
+   needed)
+
+3) Copy mrigd/ to its installation directory (for instance, under /home/my_user)
+
+4) Edit the config file (in this example, /home/my_user/mrigd/mrigd_config.py).
+   Please do not remove the comments, they will help you the next time you
+   need to edit the same file
+
+5) Be sure the rig is turned on
+
+6) Be sure that the network configuration does _NOT_ allow external
+   connections directly from the Internet. Do use a VPN instead!
+
+7) Run mrigd.py to have the rig available from the network
+
+8) Take some time to check that the services are _NOT_ available from the
+   Internet! Check that you need to use the VPN to connect to the system!
+   You do not want the whole Earth to be allowed to push your PTT, do you?
